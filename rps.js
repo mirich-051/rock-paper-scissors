@@ -2,7 +2,7 @@
 /* const btn = document.querySelector('button');
 
 function btnPlay() {
-  let letter = prompt("Choose between r, p, or s. Please enter one letter: ");
+  
 
 }
 btn.addEventListener('click', btnPlay); */
@@ -19,6 +19,20 @@ function getComputerChoice() {
   }
 }
 
-for (let i = 0; i < 5; i++) {
+/* for (let i = 0; i < 5; i++) {
   console.log(getComputerChoice());
-}
+} */
+
+  function getHumanChoice() {
+    let letter = (prompt("Choose between r, p, or s. Please enter one letter: ")).toLowerCase();
+    
+    if (letter === "r") {
+      return "rock";
+    } else if (letter === "p") {
+      return "paper";
+    } else if (letter === "s") {
+      return "scissors";
+    }
+  }
+
+  console.log(getHumanChoice());

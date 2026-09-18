@@ -1,11 +1,6 @@
+//console.clear();
 
-/* const btn = document.querySelector('button');
-
-function btnPlay() {
-  
-
-}
-btn.addEventListener('click', btnPlay); */
+const btn = document.querySelector('button');
 
 function playGame() {
 
@@ -61,14 +56,14 @@ function playGame() {
     }
     console.log("");
   }
-  
+
   let humanSelection = "";
   let computerSelection = "";
   let round = 0;
-  
+
   console.log("Human : Computer");
   console.log("");
-  for (i = 0; i < 5; i++) {
+  for (let i = 0; i < 5; i++) {
     console.log(`Round: ${i + 1}`);
     humanSelection = getHumanChoice();
     computerSelection = getComputerChoice();
@@ -88,4 +83,4 @@ function playGame() {
   }
 }
 
-playGame();
+btn.addEventListener('click', playGame);

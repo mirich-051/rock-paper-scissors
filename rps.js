@@ -1,6 +1,7 @@
   const rockHum = document.querySelector("#btnRock");
   const paperHum = document.querySelector("#btnPaper");
   const scissorsHum = document.querySelector("#btnScissors");
+  const content = document.querySelector("div");
 
 
 
@@ -26,49 +27,49 @@
   let computerScore = 0;
 
   function playRound(humanChoice, computerChoice) {
-    console.log(humanChoice + " : " + computerChoice);
+    content.textContent = `${humanChoice} + ${computerChoice}`;
     if (humanChoice === "rock" && computerChoice === "scissors") {
       humanScore++;
-      console.log("You won! Rock beats Scissors");
+      content.textContent = "You won! Rock beats Scissors";
     } else if (humanChoice === "rock" && computerChoice === "paper") {
       computerScore++;
-      console.log("You lose! Paper beats Rock");
+      content.textContent = "You lose! Paper beats Rock";
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
       humanScore++;
-      console.log("You won! Scissors beats Paper");
+      content.textContent = "You won! Scissors beats Paper";
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
       computerScore++;
-      console.log("You lose! Rock beats Scissors");
+      content.textContent = "You lose! Rock beats Scissors";
     } else if (humanChoice === "paper" && computerChoice === "rock") {
       humanScore++;
-      console.log("You won! Paper beats Rock");
+      content.textContent = "You won! Paper beats Rock";
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
       computerScore++;
-      console.log("You lose! Scissors beats Paper");
+      content.textContent = "You lose! Scissors beats Paper";
     } else {
-      console.log("Draw!")
+      content.textContent = "Draw!";
     }
-    console.log("");
+    content.textContent = "\n";
   }
 
   let humanSelection = "";
   let computerSelection = "";
   let round = 0;
 
-  console.log("Human : Computer");
-  console.log("");
+  content.textContent = "Human : Computer";
+  content.textContent = "\n";
 
 
-  console.log("----------------------");
-  console.log("Human : Computer");
-  console.log(humanScore + " : " + computerScore);
+  content.textContent = "----------------------";
+  content.textContent = "Human : Computer";
+  content.textContent = `${humanScore} :  ${computerScore}`;
 
   if (humanScore > computerScore) {
-    console.log("You won!")
+    content.textContent = "You won!";
   } else if (humanScore < computerScore) {
-    console.log("Computer won!")
+    content.textContent = "Computer won!";
   } else {
-    console.log("Game result: Draw")
+    content.textContent = "Game result: Draw";
   }
 
 

@@ -1,8 +1,8 @@
 //console.clear();
 
-const btn = document.querySelector('button');
 
-function playGame() {
+
+
 
   function getComputerChoice() {
     let num = Math.floor(Math.random() * 3) + 1;
@@ -76,6 +76,6 @@ function playGame() {
   } else {
     console.log("Game result: Draw")
   }
-}
 
-btn.addEventListener('click', playGame);
+
+

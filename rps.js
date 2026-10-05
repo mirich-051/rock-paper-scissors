@@ -2,8 +2,9 @@
   const paperHum = document.querySelector("#btnPaper");
   const scissorsHum = document.querySelector("#btnScissors");
   const content = document.querySelector("div");
+  const btn = document.querySelector("#play");
 
-
+  function playTest() {
 
   function getComputerChoice() {
     let num = Math.floor(Math.random() * 3) + 1;
@@ -64,13 +65,16 @@
   content.textContent = "Human : Computer";
   content.textContent = `${humanScore} :  ${computerScore}`;
 
-  if (humanScore > computerScore) {
+  if (humanScore - computerScore === 5) {
     content.textContent = "You won!";
-  } else if (humanScore < computerScore) {
+  } else if (computerScore - humanScore === 5 ) {
     content.textContent = "Computer won!";
-  } else {
-    content.textContent = "Game result: Draw";
   }
+
+
+  }
+
+  btn.addEventListener("click", playTest);
 
 
 

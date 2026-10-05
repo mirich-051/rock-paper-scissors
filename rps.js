@@ -63,12 +63,7 @@ function playGame() {
 
   console.log("Human : Computer");
   console.log("");
-  for (let i = 0; i < 5; i++) {
-    console.log(`Round: ${i + 1}`);
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
-  }
+
 
   console.log("----------------------");
   console.log("Human : Computer");

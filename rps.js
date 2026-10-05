@@ -1,6 +1,6 @@
-//console.clear();
-
-
+  const rockHum = document.querySelector("#btnRock");
+  const paperHum = document.querySelector("#btnPaper");
+  const scissorsHum = document.querySelector("#btnScissors");
 
 
 
@@ -17,15 +17,9 @@
   }
 
   function getHumanChoice() {
-    let letter = (prompt("Choose between r, p, or s. Please enter one letter: "))[0].toLowerCase();
-
-    if (letter === "r") {
-      return "rock";
-    } else if (letter === "p") {
-      return "paper";
-    } else if (letter === "s") {
-      return "scissors";
-    }
+    rockHum.addEventListener("click", () => "rock");
+    paperHum.addEventListener("click", () => "paper");
+    scissorsHum.addEventListener("click", () => "scissors");
   }
 
   let humanScore = 0;

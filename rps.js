@@ -3,10 +3,10 @@ const paperHum = document.querySelector("#btnPaper");
 const scissorsHum = document.querySelector("#btnScissors");
 const content = document.querySelector("div");
 
-
-function print(text = "") {
+function print(text = "", cls = "") {
   const line = document.createElement('p');   // one p per line
   line.textContent = text; // textContent = safe (no HTML injection)
+  if (cls) {line.className = cls;}
   content.appendChild(line);
 }
 
@@ -46,22 +46,22 @@ function playGame() {
     print(`${humanChoice} + ${computerChoice}`);
     if (humanChoice === "rock" && computerChoice === "scissors") {
       humanScore++;
-      print("You won! Rock beats Scissors");
+      print("You won!", "win");
     } else if (humanChoice === "rock" && computerChoice === "paper") {
       computerScore++;
-      print("You lose! Paper beats Rock");
+      print("You lose!", "lose");
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
       humanScore++;
-      print("You won! Scissors beats Paper");
+      print("You won!", "win");
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
       computerScore++;
-      print("You lose! Rock beats Scissors");
+      print("You lose!", "lose");
     } else if (humanChoice === "paper" && computerChoice === "rock") {
       humanScore++;
-      print("You won! Paper beats Rock");
+      print("You won!", "win");
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
       computerScore++;
-      print("You lose! Scissors beats Paper");
+      print("You lose!", "lose");
     } else {
       print("Draw!");
     }
@@ -76,26 +76,24 @@ function playGame() {
   const computerSelection = getComputerChoice();
   playRound(humanSelection, computerSelection);
 
-
+  // It tracks the score and declares the winner to be the first to reach five victories.
   if (humanScore === 5) {
     content.innerHTML = "";
-    print("You won!");
-    print("Human : Computer");
-    print(`${humanScore} :  ${computerScore}`);
+    print("You won!", "win");
+    print("Human : Computer", "win");
+    print(`${humanScore} :  ${computerScore}`, "win");
     humanScore = 0;
     computerScore = 0;
   } else if (computerScore === 5) {
     content.innerHTML = "";
-    print("Computer won!");
-    print("Human : Computer");
-    print(`${humanScore} :  ${computerScore}`);
+    print("Computer won!", "lose");
+    print("Human : Computer", "lose");
+    print(`${humanScore} :  ${computerScore}`, "lose");
     humanScore = 0;
     computerScore = 0;
   }
-
 }
 
-// Ovo radi, sada to treba primjeniti na ostale button
 rockHum.addEventListener("click", getHumanChoiceRock);
 rockHum.addEventListener("click", playGame);
 

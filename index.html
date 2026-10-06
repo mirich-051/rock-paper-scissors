@@ -10,16 +10,52 @@
     html {
       width: 100%;
       height: inherit;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
     }
 
     body {
       margin: 0;
+      text-align: center;
+      background-color: #dddddd;
     }
 
-    h1,
-    button, div {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 20px;
+    h1 {
+      color: navy;
+      margin: 3rem auto;
+    }
+
+    button {
+      width: 7rem;
+      height: 2rem;
+      padding: 0.5rem auto;
+      font-size: 1rem;
+      background-color: navy;
+      color: white;
+      font-weight: bold;
+      border-radius: 2rem;
+      border: 2px solid navy;
+      margin: 1.5rem 2rem;
+    }
+
+    button:active {
+      background-color: lightblue;
+      /*border: 2px solid navy;*/
+    }
+
+    div {
+      font-size: 2rem;
+      color: navy;
+    }
+
+    p.win {
+      color: green;
+      font-weight: bold;
+    }
+
+    p.lose {
+      color: red;
+      font-weight: bold;
     }
   </style>
 </head>

@@ -9,3 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const btn = document.querySelector('button'); 
 btn.addEventListener('click', playGame);
 });
+
+With the Revisiting Rock Paper Scissors lesson on The Odin Project, the game has been developed using JavaScript and CSS for display on a webpage.
+With a little help from AI regarding the print function and the CSS styling within it—since I didn't want to waste time on the usual trial-and-error approach—the program works.
+It isn't perfect, but it's mine, and I learned a lot from building it.

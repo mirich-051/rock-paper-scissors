@@ -10,11 +10,26 @@ function print(text = "") {
   content.appendChild(line);
 }
 
+let humanSelection = "";
+function getHumanChoiceRock() {
+  humanSelection = "rock";
+  return humanSelection;
+}
+
+function getHumanChoicePaper() {
+  humanSelection = "paper";
+  return humanSelection;
+}
+
+function getHumanChoiceScissors() {
+  humanSelection = "scissors";
+  return humanSelection;
+}
+
 let humanScore = 0;
 let computerScore = 0;
 
 function playGame() {
-
   function getComputerChoice() {
     let num = Math.floor(Math.random() * 3) + 1;
 
@@ -26,12 +41,6 @@ function playGame() {
       return "scissors";
     }
   }
-
-  function getHumanChoice() {
-    return "rock";
-  }
-
-
 
   function playRound(humanChoice, computerChoice) {
     print(`${humanChoice} + ${computerChoice}`);
@@ -64,12 +73,8 @@ function playGame() {
   print("Human : Computer");
   print();
 
-  const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
   playRound(humanSelection, computerSelection);
-
-
-
 
 
   if (humanScore === 5) {
@@ -90,7 +95,15 @@ function playGame() {
 
 }
 
+// Ovo radi, sada to treba primjeniti na ostale button
+rockHum.addEventListener("click", getHumanChoiceRock);
 rockHum.addEventListener("click", playGame);
+
+paperHum.addEventListener("click", getHumanChoicePaper);
+paperHum.addEventListener("click", playGame);
+
+scissorsHum.addEventListener("click", getHumanChoiceScissors);
+scissorsHum.addEventListener("click", playGame);
 
 
 
